@@ -64,3 +64,22 @@ console.log('dataset',data)
 
 // Pattern used:
 // HashMap / Set (lookup pattern)
+
+
+let dataset = [3,4,6,1,0];
+let tar =8;
+let newMap1= new Map();
+function check(){
+for(let i=0;i<dataset.length;i++){
+    console.log('dataset[i]',dataset[i])
+    let complement = tar-dataset[i];
+    console.log('complement',complement)
+    if(newMap1.has(complement)){
+        return([newMap1.get(complement),i]);
+    }
+    newMap1.set(dataset[i],i)
+}
+}
+
+const ch = check();
+console.log('val', ch)
