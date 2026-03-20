@@ -27,13 +27,43 @@
 
 
 function maxProfit(arr){
-const highest = arr.reduce((acc,val)=>{
-acc= val>acc?val:acc;
-return acc;
-},0);
+let minPrice =  arr[0];
+let maxProfit = 0;
+for(let i=1;i<arr.length;i++){
+    if(arr[i]<minPrice){
+        minPrice= arr[i]
+    }
+    else{
+        let profit  =arr[i]-minPrice;
+        maxProfit= Math.max(profit,maxProfit);
 
-return highest;
-
+    }
+}
+ return maxProfit;
 }
 
-console.log(maxProfit([7,6,4,3,1]))
+console.log(maxProfit([1,6,9,3,1]))
+
+
+// Approach used:
+// Track minimum price and calculate profit in one pass
+
+// Why:
+// Ensures buying happens before selling and avoids unnecessary comparisons
+
+// Time complexity:
+// O(n) If array has n elements → loop runs n times
+
+// Space complexity:
+// O(1)
+//let minPrice = prices[0];
+//let maxProfit = 0; Memory used does NOT grow with input size
+
+// Pattern used:
+// Greedy + Single pass
+
+// Memory trick:
+// min → profit → max
+
+// Loop type:
+// Single loop → O(n)
