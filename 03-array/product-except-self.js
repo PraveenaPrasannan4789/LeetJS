@@ -21,3 +21,27 @@
 // 2 <= nums.length <= 105
 // -30 <= nums[i] <= 30
 
+
+
+const productOfArray =(nums)=>{
+const n = nums.length;
+const leftArray = new Array(n).fill(1);
+const rightArray = new Array(n).fill(1);
+const totalArray = new Array(n);
+
+for(let i=1;i<n;i++){
+    leftArray[i]= leftArray[i-1]*nums[i-1];
+}
+
+for(let i=n-2;i>=0;i--){
+    rightArray[i]= rightArray[i+1]*nums[i+1];
+}
+
+for (let i=0;i<n;i++){
+    totalArray[i]= leftArray[i]*rightArray[i];
+}
+return totalArray;
+
+}
+
+console.log('productOfArray',productOfArray([1,2,3,4]))
