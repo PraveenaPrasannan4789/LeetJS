@@ -37,3 +37,24 @@ return nums;
 }
 
 console.log(moveZeros([1,0,1,0,3,12]));
+
+// Approach used:
+// Move all non-zero elements forward and fill remaining positions with zeros
+
+// Why:
+// Maintains relative order of non-zero elements and does it in-place
+
+// Time complexity:
+// O(n) → single pass to shift non-zeros + second pass to fill zeros
+
+// Space complexity:
+// O(1) → in-place, no extra arrays used
+
+// Pattern used:
+// Two-pointer / single pass
+
+// Memory trick:
+// Use 'position' pointer to track next non-zero placement
+
+// Loop type:
+// Single loop for non-zeros + loop to fill zeros → O(n)
