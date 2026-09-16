@@ -107,3 +107,11 @@ const { name, role, active } = worker;
 console.log(name); // John
 console.log(role); // Manager
 console.log("active or not", active ? "yes" : "no"); // Manager
+
+//Create a new object with age changed to 33
+const updatedWorker = {
+  ...worker,
+  age: 33,
+};
+
+console.log(updatedWorker);
