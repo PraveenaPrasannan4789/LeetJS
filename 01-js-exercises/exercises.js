@@ -102,7 +102,8 @@ const worker = {
 // Exercises:
 // 1. Destructure name and role
 
-const { name, role } = worker;
+const { name, role, active } = worker;
 
 console.log(name); // John
 console.log(role); // Manager
+console.log("active or not", active ? "yes" : "no"); // Manager
